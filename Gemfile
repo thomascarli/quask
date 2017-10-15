@@ -26,12 +26,12 @@ gem 'annotate'
 # gem 'rack-cors'
 
 group :development, :test do
+	gem 'pry-byebug', '~> 3.5'
 
 end
 
 group :development do
 	gem 'rspec-rails', '~> 3.6', '>= 3.6.1'
-	gem 'pry-byebug', '~> 3.5'
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'

@@ -1,5 +1,15 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+
+	# should have a name
+	 before do 
+	 	@user = User.new
+	 end
+
+	describe 'Validates' do 
+		it 'name' do
+			expect(@user.valid?).to eq(false)
+		end
+	end
 end

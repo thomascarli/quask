@@ -1,4 +1,4 @@
-class AnswerssController < ApplicationController
+class AnswersController < ApplicationController
 
   # POST /questions/:question_id/answers
   def create

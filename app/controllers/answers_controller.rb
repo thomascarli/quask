@@ -16,7 +16,7 @@ class AnswerssController < ApplicationController
   private
 
   def answer_params
-    params.permit(:question_id, :user_id, :name)
+    params.permit(:question_id, :name)
   end
 
   def user_generated_answer

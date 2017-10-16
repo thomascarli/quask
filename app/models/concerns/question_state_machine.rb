@@ -12,8 +12,12 @@ module QuestionStateMachine
       end
 
       before_transition any => :live do |question, transition|
-        # Broadcast new question to all web sockets
         puts "going live"
+      end
+
+      after_transition :on_deck => :live do |question, transition|
+        puts "live!"
+        ActionCable.server.broadcast('questions', question: question)
       end
 
       before_transition any => :done do |question, transition|
@@ -30,6 +34,10 @@ module QuestionStateMachine
 
       event :finish do
         transition :live => :done
+      end
+
+      event :reset do
+        transition any => :pending
       end
     end
   end

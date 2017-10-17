@@ -5,8 +5,10 @@ class QuestionsController < ApplicationController
   # POST /questions
   def create
     @question = Question.create!(question_params.merge({user_id: 1}))
-    question_params[:answers].each do |answer|
-      Answer.create!(name: answer[:name], question_id: @question.id)
+    if question_params[:answers]
+      question_params[:answers].each do |answer|
+        Answer.create!(name: answer[:name], question_id: @question.id)
+      end
     end
     render json: @question, status: :created
   end

@@ -4,7 +4,10 @@ class QuestionsController < ApplicationController
 
   # POST /questions
   def create
-    @question = Question.create!(question_params)
+    @question = Question.create!(question_params.merge({user_id: 1}))
+    question_params[:answers].each do |answer|
+      Answer.create!(name: answer[:name], question_id: @question.id)
+    end
     render json: @question, status: :created
   end
 
@@ -35,6 +38,6 @@ class QuestionsController < ApplicationController
   end
 
   def question_params
-    params.permit(:name, :user_id)
+    params.permit(:name, :user_id, answers: [:name])
   end
 end

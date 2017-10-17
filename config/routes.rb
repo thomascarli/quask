@@ -6,4 +6,7 @@ Rails.application.routes.draw do
     resources :answers, only: [:index, :create] do
     end
   end
+
+  resources :responses, only: [:create] do
+  end
 end

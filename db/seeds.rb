@@ -1,5 +1,5 @@
-User.create!(name: 'seb')
-User.create!(name: 'tom')
+User.create!(name: 'seb', password: '123456')
+User.create!(name: 'tom', password: 'abcdef')
 
 seb = User.find_by(name: 'seb')
 tom = User.find_by(name: 'tom')
@@ -11,5 +11,3 @@ a = Answer.create!(question_id: q.id, name: 'Ruby')
 Response.create!(user_id: tom.id, answer_id: a.id)
 
 puts "Created a question with an Response"
-
-

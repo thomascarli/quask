@@ -1,4 +1,5 @@
-class ResponsesController < ApplicationController
+class ResponsesController < ApiController
+  before_action :require_login
 
   # POST /responses
   def create

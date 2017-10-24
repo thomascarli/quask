@@ -1,4 +1,5 @@
-class AnswersController < ApplicationController
+class AnswersController < ApiController
+  before_action :require_login
 
   # POST /questions/:question_id/answers
   def create

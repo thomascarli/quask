@@ -1,6 +1,7 @@
-class QuestionsController < ApplicationController
+class QuestionsController < ApiController
 
-  before_action :set_question, only: [:show, :updated, :destroy]
+  before_action :set_question, only: [:show, :destroy]
+  before_action :require_login
 
   # POST /questions
   def create

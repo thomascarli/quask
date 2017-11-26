@@ -17,7 +17,7 @@ module QuestionStateMachine
 
       after_transition :on_deck => :live do |question, transition|
         puts "live!"
-        ActionCable.server.broadcast('questions', question: question)
+        ActionCable.server.broadcast('questions', question: question, answers: question.answers)
       end
 
       before_transition any => :done do |question, transition|

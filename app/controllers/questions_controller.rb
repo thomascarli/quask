@@ -11,6 +11,8 @@ class QuestionsController < ApiController
         Answer.create!(name: answer[:name], question_id: @question.id)
       end
     end
+    @question.prepare
+    @question.broadcast
     render json: @question, status: :created
   end
 

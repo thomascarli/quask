@@ -1,5 +1,5 @@
 class ResponsesController < ApiController
-  before_action :require_login
+  #before_action :require_login
 
   # POST /responses
   def create

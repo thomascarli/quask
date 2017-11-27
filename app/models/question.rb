@@ -21,7 +21,9 @@ class Question < ApplicationRecord
   def self.squawk
     next_question = self.where(state: "on_deck").first
     on_deck_question = self.where(state: "pending").first
+    live_answers = self.where(state: "live")
 
+    live_answers.map(&:finish)
     next_question.broadcast if next_question
     on_deck_question.prepare if on_deck_question
   end

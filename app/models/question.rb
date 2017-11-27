@@ -18,10 +18,9 @@ class Question < ApplicationRecord
   has_many :answers
   accepts_nested_attributes_for :answers
 
-  def self.squawk
-    binding.pry
-    next_question = where(state: "on_deck").first
-    on_deck_question = where(state: "pending").first
+  def squawk
+    next_question = self.where(state: "on_deck").first
+    on_deck_question = self.where(state: "pending").first
 
     if next_question
       next_question.broadcast

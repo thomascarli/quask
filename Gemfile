@@ -13,6 +13,7 @@ gem 'state_machines'
 gem 'state_machines-activerecord'
 gem 'annotate'
 gem 'bcrypt'
+gem 'whenever'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 # gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production

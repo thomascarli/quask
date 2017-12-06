@@ -36,7 +36,7 @@ Rails.application.configure do
   # config.action_cable.url = 'wss://example.com/cable'
   # config.action_cable.allowed_request_origins = [ 'http://example.com', /http:\/\/example.*/ ]
   config.web_socket_server_url = "wss://quask-api.herokuapp.com/cable"
-  config.action_cable.allowed_request_origins = ['http://192.168.172.128:3001', 'http://localhost:3001']
+  config.action_cable.allowed_request_origins = ['https://codepen.io', 'http://192.168.172.128:3001', 'http://localhost:3001']
 
 
 

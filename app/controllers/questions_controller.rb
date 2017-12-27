@@ -7,7 +7,7 @@ class QuestionsController < ApiController
   def create
     @question = Question.create!(question_params.merge({user_id: 1}))
     if question_params[:answers]
-      question_params[:answers].each do |answer|
+      question_params[:answers].with_indifferent_access.each do |answer|
         Answer.create!(name: answer[:name], question_id: @question.id)
       end
     end

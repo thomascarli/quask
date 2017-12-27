@@ -24,7 +24,7 @@ class QuestionsController < ApiController
   # GET /questions
   def index
     @questions = Question.all
-    render json: @questions, status: :ok
+    render json: @questions.order(:created_at), status: :ok
   end
 
   # PUT /questions/:id

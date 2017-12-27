@@ -10,7 +10,7 @@ class AnswersController < ApiController
   # GET /questions/:question_id/answers
   def index
     @answers = Question.find(params[:question_id]).answers
-    render json: @answers, status: :ok
+    render json: @answers.map{|answer| {answer: answer, count: answer.response_count} }, status: :ok
   end
 
   private

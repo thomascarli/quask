@@ -9,7 +9,7 @@ class ResponsesController < ApiController
 
   private
 
-  def answer_params
+  def response_params
     params.require(:response).permit(:user_id, :answer_id)
   end
 end

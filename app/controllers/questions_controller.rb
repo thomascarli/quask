@@ -43,6 +43,6 @@ class QuestionsController < ApiController
   end
 
   def question_params
-    params.require(:question).permit(:name, :user_id, answers: [:name])
+    params.require(:question).permit(:name, :user_id, answers_attributes: [:name])
   end
 end
